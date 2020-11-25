@@ -17,7 +17,6 @@ export class IsAuthorizedDirective implements OnInit{
 
   ngOnInit(): void {
     this.authSvc.authorized$.subscribe(authorized => {
-      console.log(authorized);
       if (authorized) {
         this.vcRef.createEmbeddedView(this.tplRef);
       } else {
