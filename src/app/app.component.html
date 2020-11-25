@@ -11,3 +11,46 @@
     </div>
   </div>
 </div>
+
+<div class="card">
+  <div class="card-title">
+    <h2>Structural Directive: appAuthorized</h2>
+  </div>
+  <div class="card-body">
+    <div>
+      Current State: {{ (authenticated$ | async) ? 'Logged In' : 'Logged out' }}
+    </div>
+    <div class="actions">
+      <button (click)="logIn()" [disabled]="authenticated$ | async">Log In</button>
+      <button (click)="logOff()" [disabled]="!(authenticated$ | async)">Log Out</button>
+    </div>
+    <div>
+      <h3>Admin Area</h3>
+      <hr>
+      <div *appIsAuthorized>
+        Admin Content Only
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">
+    <h2>Structural Directive: appOverlay</h2>
+  </div>
+  <div class="card-body">
+    <button (click)="loadData()">Load Data</button>
+    <div *appOverlay="loading">
+      <p>Current State: {{ (authenticated$ | async) ? 'Logged In' : 'Logged out' }}</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus cupiditate doloremque fugit, mollitia
+        natus obcaecati omnis, perspiciatis quam quos, rerum vitae? Ab accusantium dolore ipsa molestias nam rerum
+        sunt?</p>
+      <p>Enim fuga ipsum minus perferendis quidem tempore. Accusantium ad aliquid aspernatur consequatur cumque
+        doloremque, est et fugiat, illo laborum officiis perspiciatis possimus provident quidem recusandae suscipit,
+        tempora tempore vel veritatis?</p>
+      <p>Ab fuga illo nihil pariatur voluptatum. Accusantium beatae dolor dolore facilis hic incidunt, itaque
+        necessitatibus non obcaecati! Ad culpa error facere fugiat harum illum libero maxime nostrum sapiente tempora.
+        Cumque?</p>
+    </div>
+  </div>
+</div>
