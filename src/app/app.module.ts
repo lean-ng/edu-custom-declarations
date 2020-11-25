@@ -6,6 +6,7 @@ import { InputMaskDirective } from './directives/input-mask.directive';
 import { OverlayDirective } from './directives/overlay.directive';
 import { IsAuthorizedDirective } from './directives/is-authorized.directive';
 import { OverlayContainerComponent } from './components/overlay-container/overlay-container.component';
+import { CaesarPipe } from './pipes/caesar.pipe';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { OverlayContainerComponent } from './components/overlay-container/overla
     InputMaskDirective,
     OverlayDirective,
     IsAuthorizedDirective,
-    OverlayContainerComponent
+    OverlayContainerComponent,
+    CaesarPipe
   ],
   imports: [
     BrowserModule

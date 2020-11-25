@@ -2,6 +2,16 @@
 
 <div class="card">
   <div class="card-title">
+    <h2>Pipe: Rot13 Cipher</h2>
+  </div>
+  <div class="card-body">
+    <input #fld type="text" (input)="true">
+    You entered: {{ fld.value | caesar }}
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">
     <h2>Attribute Directive: InputMask</h2>
   </div>
   <div class="card-body">
@@ -39,7 +49,7 @@
     <h2>Structural Directive: appOverlay</h2>
   </div>
   <div class="card-body">
-    <button (click)="loadData()">Load Data</button>
+    <button [disabled]="loading" (click)="loadData()">Load Data</button>
     <div *appOverlay="loading">
       <p>Current State: {{ (authenticated$ | async) ? 'Logged In' : 'Logged out' }}</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus cupiditate doloremque fugit, mollitia
